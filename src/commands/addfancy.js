@@ -13,8 +13,8 @@ function Run(client, msg)
     const channel_id = BotFunctions.GetMessageChannelID(msgParams[2]);
 
     client.channels.fetch(channel_id).then(channel => {
-        if (channel.type != ChannelType.GuildText) 
-            return BotFunctions.SimpleMessage(msg.channel, "The passed channel must be a text channel that you can post messages in.", "Incorrect channel type!", Colors["error"]);
+        // if (channel.type != ChannelType.GuildText) 
+        //     return BotFunctions.SimpleMessage(msg.channel, "The passed channel must be a text channel that you can post messages in.", "Incorrect channel type!", Colors["error"]);
         
         FancyFunctions.GetMessagePropertiesFromUser(msg, (hex_color, title, message) => {
             global.stickies.AddFancySticky(server_id, channel_id, title, message, hex_color, (val) => { 
